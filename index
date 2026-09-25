@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arief Surya Aditya — Inventory Control & Data Operasional</title>
+<style>
+  :root{
+    --ink:#1B2838;
+    --steel:#3D5A73;
+    --paper:#F3F1EA;
+    --paper2:#EAE6DB;
+    --amber:#C97A2E;
+    --line:#C9C2B2;
+    --white:#FFFDF9;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;margin:0;padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  html,body{height:auto;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#EDE8DC;
+      --steel:#9FB6C9;
+      --paper:#161A1F;
+      --paper2:#1E242B;
+      --amber:#E29A55;
+      --line:#3A4048;
+      --white:#1E242B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#EDE8DC;
+    --steel:#9FB6C9;
+    --paper:#161A1F;
+    --paper2:#1E242B;
+    --amber:#E29A55;
+    --line:#3A4048;
+    --white:#1E242B;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+
+  /* Header / hero */
+  header.hero{
+    border-bottom:2px solid var(--ink);
+    padding:56px 0 32px;
+  }
+  .tag{
+    font-size:13px;
+    letter-spacing:.02em;
+    color:var(--steel);
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(2.2rem,6vw,3.4rem);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.02;
+  }
+  .role{
+    font-size:clamp(1.05rem,2.6vw,1.3rem);
+    color:var(--steel);
+    margin-top:10px;
+    font-weight:600;
+  }
+  .meta-row{
+    margin-top:22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .meta-row a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);}
+  .meta-row a:hover{border-color:var(--amber);}
+  .summary{
+    margin-top:28px;
+    max-width:62ch;
+    font-size:16px;
+    color:var(--ink);
+  }
+
+  /* generic section */
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:26px;
+    gap:16px;
+  }
+  h2{
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:-0.01em;
+  }
+  .section-note{font-size:13px;color:var(--steel);text-align:right;}
+
+  /* experience */
+  .job{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:18px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+  }
+  .job:first-of-type{border-top:none;}
+  .job-period{
+    font-size:13px;
+    color:var(--steel);
+    font-weight:600;
+    padding-top:2px;
+  }
+  .job-title{font-weight:800;font-size:17px;}
+  .job-org{color:var(--steel);font-size:14px;margin-top:2px;font-weight:600;}
+  .job ul{margin-top:12px;padding-left:18px;}
+  .job li{margin-bottom:7px;font-size:14.5px;}
+  .job li::marker{color:var(--amber);}
+  @media (max-width:600px){
+    .job{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* skills */
+  .skill-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  @media (max-width:600px){.skill-grid{grid-template-columns:1fr;}}
+  .skill-block h3{
+    font-size:13px;
+    color:var(--steel);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    border:1px solid var(--line);
+    padding:6px 12px;
+    font-size:13px;
+    border-radius:2px;
+    background:var(--white);
+  }
+
+  /* case studies */
+  .case{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--amber);
+    padding:24px 26px;
+    margin-bottom:20px;
+  }
+  .case h3{font-size:17px;font-weight:800;margin-bottom:14px;}
+  .stap{display:grid;grid-template-columns:90px 1fr;gap:12px;margin-bottom:10px;font-size:14px;}
+  .stap b{color:var(--steel);font-weight:700;}
+  @media (max-width:600px){.stap{grid-template-columns:1fr;gap:2px;}}
+  .result-line{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed var(--line);
+    font-weight:700;
+    font-size:14.5px;
+  }
+  .result-line span{color:var(--amber);}
+
+  /* education */
+  .edu-row{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .edu-row:first-of-type{border-top:none;}
+  .edu-row .school{font-weight:700;}
+  .edu-row .degree{color:var(--steel);margin-top:2px;}
+  .edu-row .yr{color:var(--steel);white-space:nowrap;font-weight:600;}
+
+  footer{
+    padding:44px 0 60px;
+    text-align:center;
+  }
+  footer .big{
+    font-size:clamp(1.6rem,4.5vw,2.2rem);
+    font-weight:800;
+    letter-spacing:-0.01em;
+  }
+  footer .contact-links{
+    margin-top:18px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+    font-size:14px;
+  }
+  footer .contact-links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;}
+  footer .contact-links a:hover{border-color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="tag">CV & Portofolio</div>
+    <h1>Arief Surya Aditya</h1>
+    <div class="role">Inventory Control & Data Operasional — Gudang, Logistik, Quality Assurance</div>
+    <div class="meta-row">
+      <a href="mailto:ariefsuryaaditya@gmail.com">ariefsuryaaditya@gmail.com</a>
+      <span>08986350016</span>
+      <span>Tarik, Sidoarjo, Jawa Timur</span>
+    </div>
+    <p class="summary">Lulusan S1 Teknik Informatika dengan pengalaman lebih dari 4 tahun mengelola data operasional gudang dan mutu produksi di industri manufaktur. Fokus pada akurasi data dan otomasi laporan menggunakan Excel tingkat lanjut — VLOOKUP referensi absolut dan Pivot Table — untuk mendukung keputusan manajemen yang lebih cepat dan tepat.</p>
+  </header>
+
+  <section id="pengalaman">
+    <div class="section-head">
+      <h2>Pengalaman Kerja</h2>
+      <div class="section-note">2018 — sekarang</div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Jun 2024 — Sekarang</div>
+      <div>
+        <div class="job-title">Inventory Control & Report Specialist (Warehouse Admin)</div>
+        <div class="job-org">PT New Asia International, Sidoarjo</div>
+        <ul>
+          <li>Mengelola dan memvalidasi arus keluar-masuk stok logistik serta material baja fabrikasi di gudang utama.</li>
+          <li>Menyusun laporan harian, mingguan, dan bulanan untuk manajemen puncak.</li>
+          <li>Mengintegrasikan laporan lapangan dengan master data menggunakan VLOOKUP referensi absolut untuk mengeliminasi human error.</li>
+          <li>Mengubah ribuan baris log transaksi mentah menjadi dasbor eksekutif interaktif dengan Pivot Table.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Nov 2020 — Jul 2022</div>
+      <div>
+        <div class="job-title">Quality Assurance</div>
+        <div class="job-org">PT Magna Pinasthika Flexipack</div>
+        <ul>
+          <li>Mengevaluasi kepatuhan mutu proses produksi terhadap standar regulasi perusahaan.</li>
+          <li>Menyusun dan menyosialisasikan prosedur instruksi kerja untuk menekan defect rate.</li>
+          <li>Menganalisis data kualitas dan mengambil tindakan korektif-preventif (CAPA).</li>
+          <li>Menyusun laporan QA berkala untuk manajemen operasional pabrik.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Feb 2019 — Jul 2019</div>
+      <div>
+        <div class="job-title">Operator Produksi</div>
+        <div class="job-org">CV Sinar Agung</div>
+        <ul>
+          <li>Mengawasi pengoperasian mesin produksi sesuai standar K3.</li>
+          <li>Memastikan ketersediaan suplai material untuk mencegah kekosongan atau penumpukan inventori.</li>
+          <li>Berkontribusi menekan pemborosan material sebesar 20% sambil menjaga target output.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Jan 2018 — Des 2018</div>
+      <div>
+        <div class="job-title">Admin Gudang</div>
+        <div class="job-org">Sportivo Indonesia</div>
+        <ul>
+          <li>Memonitor pergerakan fisik stok dan menyusun laporan kebutuhan pengadaan ke divisi logistik.</li>
+          <li>Mengevaluasi performa staf pergudangan dan merekomendasikan perbaikan tata letak penyimpanan.</li>
+          <li>Memastikan kesesuaian kualitas barang masuk-keluar berdasarkan spesifikasi teknis.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="studi-kasus">
+    <div class="section-head">
+      <h2>Studi Kasus Efisiensi Data</h2>
+      <div class="section-note">Otomatisasi Excel</div>
+    </div>
+
+    <div class="case">
+      <h3>Sistem Pencarian Otomatis Spesifikasi Material (VLOOKUP)</h3>
+      <div class="stap"><b>Situasi</b><span>Pencarian spesifikasi produk dari ribuan log transaksi harian melambat karena pencocokan manual di lembar cetak.</span></div>
+      <div class="stap"><b>Tugas</b><span>Membangun sistem pencarian cepat di dalam lembar kerja yang instan, akurat, dan bebas risiko pergeseran rumus.</span></div>
+      <div class="stap"><b>Aksi</b><span>Menggunakan Kode QR sebagai kata kunci unik dan menerapkan VLOOKUP dengan referensi absolut ($) untuk mengunci range tabel utama.</span></div>
+      <div class="result-line">Hasil: <span>spesifikasi terpanggil dalam &lt;1 detik, akurasi data 100%.</span></div>
+    </div>
+
+    <div class="case">
+      <h3>Kompilasi Log Transaksi Menjadi Laporan Eksekutif (Pivot Table)</h3>
+      <div class="stap"><b>Situasi</b><span>Manajemen senior kesulitan memantau total tonase dan tren pengeluaran material dari data mentah bulanan.</span></div>
+      <div class="stap"><b>Tugas</b><span>Mengompilasi ribuan baris log menjadi tabel ringkasan yang bersih, siap baca, dan dinamis.</span></div>
+      <div class="stap"><b>Aksi</b><span>Melakukan data cleansing, lalu menerapkan Pivot Table untuk merangkum total volume dan berat material per kategori.</span></div>
+      <div class="result-line">Hasil: <span>rangkuman operasional terbaca instan untuk perencanaan stok bulan berikutnya.</span></div>
+    </div>
+  </section>
+
+  <section id="keahlian">
+    <div class="section-head"><h2>Keahlian</h2></div>
+    <div class="skill-grid">
+      <div class="skill-block">
+        <h3>HARD SKILLS</h3>
+        <div class="pill-row">
+          <span class="pill">Excel Advanced</span>
+          <span class="pill">VLOOKUP & Referensi Absolut</span>
+          <span class="pill">Pivot Table</span>
+          <span class="pill">Data Cleansing</span>
+          <span class="pill">Administrasi Gudang</span>
+          <span class="pill">Quality Assurance</span>
+          <span class="pill">Manajemen Logistik</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>SOFT SKILLS</h3>
+        <div class="pill-row">
+          <span class="pill">Ketelitian Tinggi</span>
+          <span class="pill">Analisis Masalah</span>
+          <span class="pill">Komunikasi Korporat</span>
+          <span class="pill">Manajemen Waktu</span>
+          <span class="pill">Kolaborasi Lintas Divisi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <div class="section-head"><h2>Pendidikan</h2></div>
+    <div class="edu-row">
+      <div>
+        <div class="school">Universitas Maarif Hasyim Latif</div>
+        <div class="degree">S1 Teknik Informatika · IPK 3.17</div>
+      </div>
+      <div class="yr">Lulus 2019</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="school">SMK YPM 7</div>
+        <div class="degree">Teknik Komputer & Jaringan · Nilai 7.8</div>
+      </div>
+      <div class="yr">Lulus 2014</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="big">Mari berdiskusi.</div>
+    <div class="contact-links">
+      <a href="mailto:ariefsuryaaditya@gmail.com">ariefsuryaaditya@gmail.com</a>
+      <a href="tel:08986350016">08986350016</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
