@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08080c" />
+  <title>Arief Surya Aditya — Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308080c'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='32' font-weight='800' fill='%23ddb065' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Intro loader -->
+  <div class="loader" id="loader"><span>Arief Surya Aditya<i>.</i></span></div>
+
+  <!-- Top progress line -->
+  <div class="progress"><i id="progress-bar"></i></div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <a class="logo" href="#" data-goto="0">Arief Surya Aditya<i>.</i></a>
+    <div class="actions">
+      <button id="btn-fs" class="pill icon" title="Fullscreen">⛶</button>
+    </div>
+  </header>
+
+  <!-- Right dot navigation -->
+  <nav class="dots" aria-label="Section navigation">
+    <button class="dot active" data-goto="0" title="Home"><i></i><span>Home</span></button>
+    <button class="dot" data-goto="1" title="About"><i></i><span>About</span></button>
+    <button class="dot" data-goto="2" title="Experience"><i></i><span>Experience</span></button>
+    <button class="dot" data-goto="3" title="Work"><i></i><span>Work</span></button>
+    <button class="dot" data-goto="4" title="Services"><i></i><span>Services</span></button>
+    <button class="dot" data-goto="5" title="Contact"><i></i><span>Contact</span></button>
+  </nav>
+
+  <!-- Bottom HUD -->
+  <footer class="hud">
+    <span class="counter"><b id="hud-num">01</b> / 06</span>
+    <span id="hud-name" class="hud-name">Home</span>
+  </footer>
+
+  <main id="sections">
+
+    <!-- ===== 01 · HOME ===== -->
+    <section class="section active" id="s-home">
+      <div class="hero-bg" data-bg="hero"></div>
+      <div class="hero-shade"></div>
+      <div class="orbs" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i></div>
+      <div class="container hero">
+        <p class="eyebrow" data-reveal>Portfolio — 2026</p>
+        <h1 class="display" data-reveal><em>Arief Surya Aditya</em></h1>
+        <p class="role" data-reveal>Inventory Control &amp; Operations Data</p>
+        <p class="lead" data-reveal>4+ years turning warehouse &amp; logistics data into management-ready reports — powered by advanced Excel automation.</p>
+        <div class="badge-avail" data-reveal><i></i>Available for opportunities</div>
+        <div class="cta-row" data-reveal>
+          <button class="btn primary" data-goto="3">View My Work</button>
+          <button class="btn ghost" data-goto="5">Contact Me</button>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><i></i><span>Scroll</span></div>
+    </section>
+
+    <!-- ===== 02 · ABOUT ===== -->
+    <section class="section" id="s-about">
+      <div class="container two-col">
+        <div class="col-visual" data-reveal>
+          <div class="portrait" data-bg="portrait"></div>
+          <div class="portrait-caption">Tarik, Sidoarjo, Indonesia</div>
+        </div>
+        <div class="col-text">
+          <p class="eyebrow" data-reveal>01 — About Me</p>
+          <h2 class="h2" data-reveal>Accuracy, speed, and <em class="hl">insight</em> in every report.</h2>
+          <p class="body" data-reveal>Hello! I&#39;m Arief, an Inventory Control &amp; Report Specialist from Tarik, Sidoarjo, Indonesia. For over four years I&#39;ve managed warehouse operational data and production quality in the manufacturing industry.</p>
+          <p class="body dim" data-reveal>My specialty is report automation with advanced Excel — VLOOKUP with absolute references and PivotTables — turning thousands of raw transaction rows into ready-to-read insights that help management decide faster.</p>
+          <div class="stats" data-reveal>
+            <div class="stat"><b class="stat-num">4+</b><span>Years of Experience</span></div>
+            <div class="stat"><b class="stat-num">4</b><span>Featured Case Studies</span></div>
+            <div class="stat"><b class="stat-num">100%</b><span>Data Accuracy</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker">
+          <span>Advanced Excel</span><i>✦</i><span>VLOOKUP</span><i>✦</i><span>PivotTables</span><i>✦</i><span>Data Cleansing</span><i>✦</i><span>Inventory Control</span><i>✦</i><span>Logistics Management</span><i>✦</i><span>Quality Assurance</span><i>✦</i><span>CAPA</span><i>✦</i><span>Warehouse Administration</span><i>✦</i><span>Web Applications</span><i>✦</i>
+          <span>Advanced Excel</span><i>✦</i><span>VLOOKUP</span><i>✦</i><span>PivotTables</span><i>✦</i><span>Data Cleansing</span><i>✦</i><span>Inventory Control</span><i>✦</i><span>Logistics Management</span><i>✦</i><span>Quality Assurance</span><i>✦</i><span>CAPA</span><i>✦</i><span>Warehouse Administration</span><i>✦</i><span>Web Applications</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 · EXPERIENCE ===== -->
+    <section class="section" id="s-exp">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-reveal>02 — Experience</p>
+          <h2 class="h2" data-reveal>Where I&#39;ve worked.</h2>
+        </header>
+        <div class="timeline" data-reveal>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <div class="tl-main">
+              <span class="tl-date">Jun 2024 — Present</span>
+              <h3>Inventory Control &amp; Report Specialist</h3>
+              <p class="tl-org">PT New Asia International · Sidoarjo</p>
+              <p class="tl-desc">Managed logistics and steel-material stock data; automated recap processes with VLOOKUP and PivotTables for executive dashboards.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <div class="tl-main">
+              <span class="tl-date">Nov 2020 — Jul 2022</span>
+              <h3>Quality Assurance</h3>
+              <p class="tl-org">PT Magna Pinasthika Flexipack</p>
+              <p class="tl-desc">Evaluated production quality compliance, developed work procedures, followed up findings through CAPA, and prepared periodic QA reports.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <div class="tl-main">
+              <span class="tl-date">Feb 2019 — Jul 2019</span>
+              <h3>Production Operator</h3>
+              <p class="tl-org">CV Sinar Agung</p>
+              <p class="tl-desc">Supervised machine operations and K3 compliance; kept material supply flowing and cut material waste by up to 20%.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <div class="tl-main">
+              <span class="tl-date">Jan 2018 — Dec 2018</span>
+              <h3>Warehouse Admin</h3>
+              <p class="tl-org">Sportivo Indonesia</p>
+              <p class="tl-desc">Monitored physical stock, prepared procurement reports, evaluated warehouse layout, and inspected goods for conformity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="edu-mini" data-reveal>
+          <div><b>Universitas Maarif Hasyim Latif</b><span>Bachelor&#39;s in Informatics Engineering · GPA 3.17 — 2019</span></div>
+          <div><b>SMK YPM 7</b><span>Computer &amp; Network Engineering — 2014</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 · WORK ===== -->
+    <section class="section" id="s-work">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-reveal>03 — Selected Work</p>
+          <h2 class="h2" data-reveal>Projects I&#39;m proud of.</h2>
+        </header>
+        <div class="cards" data-reveal>
+          <div class="card">
+            <div class="card-img" data-bg="work0"><b>01</b><span class="tag">Excel Automation</span></div>
+            <div class="card-meta">
+              <h3>Automated Material Specification Lookup</h3>
+              <p>Instant in-sheet lookup across thousands of daily transaction logs. Specs retrieved in under 1 second with 100% data accuracy.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img" data-bg="work1"><b>02</b><span class="tag">Excel Automation</span></div>
+            <div class="card-meta">
+              <h3>Transaction Logs → Executive Reports</h3>
+              <p>Cleansed thousands of raw rows, then summarized them with PivotTables into dynamic tables of material volume and weight per category.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img" data-bg="work2"><b>03</b><span class="tag">Web Application</span></div>
+            <div class="card-meta">
+              <h3>Employee Extra-Fooding Recap System</h3>
+              <p>Shift-based meal records tied to employee ID, data lock on submit, admin corrections, audit history, and CSV/Excel export.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 · SERVICES ===== -->
+    <section class="section" id="s-services">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-reveal>04 — Services</p>
+          <h2 class="h2" data-reveal>What I can do.</h2>
+        </header>
+        <div class="svc-list" data-reveal>
+          <div class="svc">
+            <span class="svc-num">01</span>
+            <h3>Excel Automation</h3>
+            <p>VLOOKUP with absolute references, PivotTables, and recap templates that turn raw logs into ready-to-read reports.</p>
+          </div>
+          <div class="svc">
+            <span class="svc-num">02</span>
+            <h3>Inventory &amp; Logistics Data</h3>
+            <p>Stock monitoring, procurement reports, warehouse layout evaluation, and smooth material flow.</p>
+          </div>
+          <div class="svc">
+            <span class="svc-num">03</span>
+            <h3>Quality Assurance</h3>
+            <p>Production quality evaluation, work procedures, CAPA follow-up, and periodic QA reporting.</p>
+          </div>
+          <div class="svc">
+            <span class="svc-num">04</span>
+            <h3>Web Applications</h3>
+            <p>Practical data-entry web apps with admin panels, audit history, and Excel export.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 · CONTACT ===== -->
+    <section class="section" id="s-contact">
+      <div class="container center">
+        <p class="eyebrow" data-reveal>05 — Contact</p>
+        <h2 class="display sm" data-reveal>
+          <span>Let&#39;s turn</span>
+          <em>data</em>
+          <span>into decisions.</span>
+        </h2>
+        <a class="btn outline big" id="mail-btn" href="mailto:ariefsuryaaditya@gmail.com" data-reveal>ariefsuryaaditya@gmail.com</a>
+        <div class="socials" data-reveal>
+          <a class="pill social" href="https://instagram.com/shaviclipp" target="_blank" rel="noopener">📷&nbsp;<span>@shaviclipp</span></a>
+          <a class="pill social" href="https://wa.me/628986350016" target="_blank" rel="noopener">💬&nbsp;<span>+62 898-6350-016</span></a>
+          <a class="pill social" href="https://www.linkedin.com/in/ariefsaditya/" target="_blank" rel="noopener">💼&nbsp;<span>LinkedIn</span></a>
+        </div>
+        <p class="note" data-reveal>Available for full-time roles &amp; freelance projects — I usually reply within 24 hours.</p>
+      </div>
+      <div class="footer-line">
+        <span>© 2026 Arief Surya Aditya</span>
+        <span>Crafted with care ✦</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
